@@ -69,11 +69,11 @@ body {
         border: none;
         color: white;
         padding: 6px 14px;
-        border-radius: 4px;
+        border-radius: 2px;
         display: inline-block;
         font-size: 13px;
         cursor: pointer;
-        margin-left: 435px;
+        margin-left: 400px;
   }
       
       #more-photos-button {
@@ -81,26 +81,21 @@ body {
         border: none;
         color: white;
         padding: 6px 284px;
-        border-radius: 4px;
+        border-radius: 2px;
         font-size: 13px;
         cursor: pointer;
-       
         display: inline-block;
-        
-        margin: 4px 2px;
+        margin: 20px 60px;
       }
       #photoContainer {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 8px; /* Adjust the gap as needed */
-        margin: 8px;
-       
+        gap: 8px; 
       }
   
       .photo {
-        width: 300px; 
+        width: 367px; 
         height: 200px;
-        padding: 8px;
-        gap: 8px;
+        margin: 8px;
       }
      
