@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const morephotosButton = document.getElementById("more-photos-button");
   const grayscaleSlider = document.querySelector(".switch input");
 
-  function fetchNewPhotos(count) {
-    // shin containerin pa ber fetch fotot
+  function fetchNewPhotos(count) { // fshin fotot e containerit aktual dhe shton foto te tjera
+    
     photoContainer.innerHTML = "";
 
     for (let i = 0; i < count; i++) {
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   fetchButton.addEventListener("click", function () {
     // i ben fetch fotove pa hequr egzistuseve
-    fetchNewPhotos(4);
+    fetchNewPhotos(8);
   });
 
   morephotosButton.addEventListener("click", function () {
@@ -69,6 +69,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   grayscaleSlider.addEventListener("change", applyGreyscale);
 
-  
   fetchNewPhotos(4);
 });
