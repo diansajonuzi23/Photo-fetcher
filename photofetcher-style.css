@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 8px;
+    padding: 8px;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -74,14 +74,14 @@ body {
         display: inline-block;
         font-size: 13px;
         cursor: pointer;
-        margin-left: 400px;
+        margin-left: 390px;
   }
       
       #more-photos-button {
         background-color: #6b4ad5;
         border: none;
         color: white;
-        padding: 6px 284px;
+        padding: 6px 290px;
         border-radius: 2px;
         font-size: 13px;
         cursor: pointer;
@@ -93,7 +93,6 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px; 
       }
-  
       .photo {
         width: 367px; 
         height: 200px;
