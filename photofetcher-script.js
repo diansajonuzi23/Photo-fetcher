@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const grayscaleSlider = document.querySelector(".switch input");
 
   function fetchNewPhotos(count) { // fshin fotot e containerit aktual dhe shton foto te tjera
-    
+   
     photoContainer.innerHTML = "";
 
     for (let i = 0; i < count; i++) {
@@ -29,14 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function appendMorePhotos(count) {
+  function appendMorePhotos(count) {//shton nje nr specifik fotosh te fotot qe jan ne photoContainer
     for (let i = 0; i < count; i++) {
       fetch(baseURL)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+        .then(response => {//then eshte metod, merr nje funksion si argument
+          if (!response.ok) {//kontrollon nqs response nuk eshte ok
+            throw new Error(`HTTP error! Status: ${response.status}`);//nqs nuk eshte ok do bej throw nje error
           }
-          return response.url;
+          return response.url;//i ben return url
         })
         .then(imageUrl => {
           const imageElement = document.createElement("img");
@@ -58,12 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   fetchButton.addEventListener("click", function () {
-    // i ben fetch fotove pa hequr egzistuseve
+    // i ben fetch fotove pa hequr egzistuset
     fetchNewPhotos(8);
   });
 
   morephotosButton.addEventListener("click", function () {
-    // shtn foto pa hequr egzistuset
+    // shton foto pa hequr egzistuset
     appendMorePhotos(4);
   });
 
