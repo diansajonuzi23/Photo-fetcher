@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const grayscaleSlider = document.querySelector(".switch input");
   let totalPhotos = 0;
 
-  function fetchNewPhotos(count) {// fshin fotot e containerit aktual dhe shton foto te tjera
+  function fetchNewPhotos(count) {
     photoContainer.innerHTML = "";
 
     for (let i = 0; i < count; i++) {
@@ -42,14 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function appendMorePhotos(count) {//shton nje nr specifik fotosh te fotot qe jan ne photoContainer
+  function appendMorePhotos(count) {
     for (let i = 0; i < count; i++) {
       fetch(baseURL)
-        .then(response => {//then eshte metod, merr nje funksion si argument
-          if (!response.ok) {//kontrollon nqs response nuk eshte ok
+        .then(response => {
+          if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
-          return response.url;//i ben return url
+          return response.url;
         })
         .then(imageUrl => {
           const imageElement = document.createElement("img");
@@ -66,15 +66,15 @@ document.addEventListener("DOMContentLoaded", function () {
   function applyGreyscale() {
     const images = document.querySelectorAll("#photoContainer img");
     images.forEach(img => {
-      img.style.filter = grayscaleSlider.checked ? "grayscale(100%)" : "none";//si if ? vlereson kushtin nqs esht true fotot behen grayscale : ather del none
+      img.style.filter = grayscaleSlider.checked ? "grayscale(100%)" : "none";
     });
   }
 
-  fetchButton.addEventListener("click", function () {// i ben fetch fotove pa hequr egzistuset
+  fetchButton.addEventListener("click", function () {
     fetchNewPhotos(8);
   });
 
-  morePhotosButton.addEventListener("click", function () {// shton foto pa hequr egzistuset
+  morePhotosButton.addEventListener("click", function () {
     appendMorePhotos(4);
   });
 
